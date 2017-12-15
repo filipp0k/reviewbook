@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,84 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Reviewbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ4-LY-HAu">
+                                <rect key="frame" x="16" y="20" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-cW-fIy">
+                                <rect key="frame" x="16" y="49" width="343" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wbt-U9-lYt"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-Xu-ACg">
+                                <rect key="frame" x="16" y="78" width="343" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hjK-Xu-ACg" secondAttribute="height" multiplier="343:128" id="Fue-NS-tj8"/>
+                                </constraints>
+                                <string key="text">Well, you can paste your comment here
+Maybe</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Igor" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
+                                <rect key="frame" x="16" y="214" width="343" height="343"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ejJ-Xg-DOQ" secondAttribute="height" multiplier="1:1" id="aPT-PR-Otg"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="YqN-bZ-ife" appends="YES" id="VdS-KG-3Qi"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjK-Xu-ACg" secondAttribute="trailing" constant="16" id="35Z-j0-pU1"/>
+                            <constraint firstItem="jZ4-LY-HAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="40J-wL-sAC"/>
+                            <constraint firstItem="hjK-Xu-ACg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6RI-5Q-Azd"/>
+                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="top" secondItem="hjK-Xu-ACg" secondAttribute="bottom" constant="8" id="77T-fq-CHt"/>
+                            <constraint firstItem="wqG-cW-fIy" firstAttribute="top" secondItem="jZ4-LY-HAu" secondAttribute="bottom" constant="8" id="OpE-bK-JB1"/>
+                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="T0B-y9-c7w"/>
+                            <constraint firstItem="hjK-Xu-ACg" firstAttribute="top" secondItem="wqG-cW-fIy" secondAttribute="bottom" constant="8" id="YV0-IZ-Nhh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jZ4-LY-HAu" secondAttribute="trailing" constant="16" id="Z9h-5K-e7b"/>
+                            <constraint firstItem="wqG-cW-fIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cHJ-HF-7A2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ejJ-Xg-DOQ" secondAttribute="trailing" constant="16" id="jvN-kd-5HD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wqG-cW-fIy" secondAttribute="trailing" constant="16" id="ukr-Zy-AU0"/>
+                            <constraint firstItem="jZ4-LY-HAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wtk-QV-ObI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="Image" destination="ejJ-Xg-DOQ" id="oMs-bB-36F"/>
+                        <outlet property="Label" destination="jZ4-LY-HAu" id="R4R-Vz-biL"/>
+                        <outlet property="Name" destination="wqG-cW-fIy" id="3tC-yY-Rv8"/>
+                        <outlet property="TextView" destination="hjK-Xu-ACg" id="BHy-93-sH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YqN-bZ-ife">
+                    <connections>
+                        <action selector="tapImage:" destination="BYZ-38-t0r" id="UdX-x5-w2f"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="140" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Igor" width="642" height="642"/>
+    </resources>
 </document>

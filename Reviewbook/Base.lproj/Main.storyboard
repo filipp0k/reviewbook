@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uUH-ba-xG9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,6 +11,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="4VY-DB-pPo">
+            <objects>
+                <tableViewController id="uUH-ba-xG9" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nfr-Ta-qNK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Prototype" rowHeight="90" id="KjF-ul-hi0" customClass="ReviewCell" customModule="Reviewbook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjF-ul-hi0" id="BXZ-yH-0O7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7e-eo-Gle">
+                                            <rect key="frame" x="16" y="11" width="73" height="73"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fQ-DV-I7T">
+                                            <rect key="frame" x="92" y="11" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m0w-Iz-ffm" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
+                                            <rect key="frame" x="92" y="40" width="252" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </stackView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="ImageCell" destination="s7e-eo-Gle" id="EAb-fw-D9e"/>
+                                    <outlet property="LabelCell" destination="4fQ-DV-I7T" id="6r0-nj-cPY"/>
+                                    <outlet property="RatingCell" destination="m0w-Iz-ffm" id="Iey-vx-bFN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uUH-ba-xG9" id="InN-Po-i4C"/>
+                            <outlet property="delegate" destination="uUH-ba-xG9" id="unW-lJ-3RX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rAI-lj-ljb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-655.20000000000005" y="132.68365817091455"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -46,7 +96,7 @@ Maybe</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Igor" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
                                 <rect key="frame" x="20" y="213.5" width="335" height="335"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -56,8 +106,8 @@ Maybe</string>
                                     <outletCollection property="gestureRecognizers" destination="YqN-bZ-ife" appends="YES" id="VdS-KG-3Qi"/>
                                 </connections>
                             </imageView>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="14" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
-                                <rect key="frame" x="22" y="556.5" width="331" height="55"/>
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="firstBaseline" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
+                                <rect key="frame" x="61.5" y="556.5" width="252" height="44"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
@@ -100,6 +150,6 @@ Maybe</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Igor" width="642" height="642"/>
+        <image name="NoImage" width="1080" height="1080"/>
     </resources>
 </document>

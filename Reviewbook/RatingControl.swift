@@ -19,7 +19,7 @@ import UIKit
     }
     
     //ПЖлста работай
-    @IBInspectable var starSize: CGSize = CGSize(width: 55.0, height: 55.0)
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0)
     @IBInspectable var starCount: Int = 5
     
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="uUH-ba-xG9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EOm-EK-4G9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--List of Igors-->
         <scene sceneID="4VY-DB-pPo">
             <objects>
                 <tableViewController id="uUH-ba-xG9" customClass="TableViewController" customModule="Reviewbook" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,12 +71,19 @@
                             <outlet property="delegate" destination="uUH-ba-xG9" id="unW-lJ-3RX"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="List of Igors" id="dl8-HR-OHs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aTm-8u-m3G">
+                            <connections>
+                                <segue destination="r21-t0-Xow" kind="presentation" identifier="AddItem" id="Zzg-MD-VGq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rAI-lj-ljb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655.20000000000005" y="132.68365817091455"/>
+            <point key="canvasLocation" x="-170" y="133"/>
         </scene>
-        <!--Review View Controller-->
+        <!--New Review-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ReviewViewController" customModule="Reviewbook" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,18 +91,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-cW-fIy">
-                                <rect key="frame" x="16" y="48.5" width="343" height="21"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="wbt-U9-lYt"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-Xu-ACg">
-                                <rect key="frame" x="16" y="77.5" width="343" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-Xu-ACg">
+                                <rect key="frame" x="16" y="101" width="343" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hjK-Xu-ACg" secondAttribute="height" multiplier="343:128" id="Fue-NS-tj8"/>
@@ -105,8 +102,8 @@ Maybe</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
-                                <rect key="frame" x="20" y="213.5" width="335" height="335"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
+                                <rect key="frame" x="32" y="237" width="311" height="311"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ejJ-Xg-DOQ" secondAttribute="height" multiplier="1:1" id="aPT-PR-Otg"/>
@@ -115,9 +112,19 @@ Maybe</string>
                                     <outletCollection property="gestureRecognizers" destination="YqN-bZ-ife" appends="YES" id="VdS-KG-3Qi"/>
                                 </connections>
                             </imageView>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" distribution="equalSpacing" alignment="firstBaseline" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="556.5" width="252" height="44"/>
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="firstBaseline" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
+                                <rect key="frame" x="61.5" y="556" width="252" height="44"/>
                             </stackView>
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-cW-fIy">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="wbt-U9-lYt"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
@@ -125,18 +132,23 @@ Maybe</string>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6RI-5Q-Azd"/>
                             <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="top" secondItem="hjK-Xu-ACg" secondAttribute="bottom" constant="8" id="77T-fq-CHt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6W2-B7-y0m" secondAttribute="bottom" constant="16" id="IsP-uc-50p"/>
-                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="T0B-y9-c7w"/>
+                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="T0B-y9-c7w"/>
+                            <constraint firstItem="wqG-cW-fIy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="U96-jo-Q7F"/>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="top" secondItem="wqG-cW-fIy" secondAttribute="bottom" constant="8" id="YV0-IZ-Nhh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6W2-B7-y0m" secondAttribute="trailing" constant="20" id="ZIi-ef-Qok"/>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aAM-Bq-wsp"/>
                             <constraint firstItem="wqG-cW-fIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cHJ-HF-7A2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ejJ-Xg-DOQ" secondAttribute="trailing" constant="20" id="jvN-kd-5HD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ejJ-Xg-DOQ" secondAttribute="trailing" constant="32" id="jvN-kd-5HD"/>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rio-ib-rRD"/>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="top" secondItem="ejJ-Xg-DOQ" secondAttribute="bottom" constant="8" id="uFN-6E-Ah9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wqG-cW-fIy" secondAttribute="trailing" constant="16" id="ukr-Zy-AU0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Review" id="7iD-Xo-SAL">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acg-OZ-PW8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="W0W-ZR-Jhh"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="Image" destination="ejJ-Xg-DOQ" id="oMs-bB-36F"/>
                         <outlet property="Name" destination="wqG-cW-fIy" id="3tC-yY-Rv8"/>
@@ -150,7 +162,43 @@ Maybe</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="140" y="132.68365817091455"/>
+            <point key="canvasLocation" x="561" y="913"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8oV-YN-TAa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EOm-EK-4G9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3G5-NH-z6Z">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uUH-ba-xG9" kind="relationship" relationship="rootViewController" id="DTq-Be-mB2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LUB-Nb-qIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-919" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w6l-vg-eSI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r21-t0-Xow" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rvk-Kp-Aka">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kQg-C0-CRN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PyH-kJ-Zo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="562" y="133"/>
         </scene>
     </scenes>
     <resources>

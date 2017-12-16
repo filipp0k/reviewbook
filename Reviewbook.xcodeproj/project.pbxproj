@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1488B8AE1FE3C71700332F6A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488B8AD1FE3C71700332F6A /* RatingControl.swift */; };
 		1489C95F1FE34EA500CC6CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */; };
 		1489C9611FE34EA500CC6CA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489C9601FE34EA500CC6CA7 /* ViewController.swift */; };
 		1489C9641FE34EA500CC6CA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1489C9621FE34EA500CC6CA7 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1488B8AD1FE3C71700332F6A /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		1489C95B1FE34EA500CC6CA7 /* Reviewbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reviewbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1489C9601FE34EA500CC6CA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */,
 				1489C9601FE34EA500CC6CA7 /* ViewController.swift */,
 				1489C9621FE34EA500CC6CA7 /* Main.storyboard */,
+				1488B8AD1FE3C71700332F6A /* RatingControl.swift */,
 				1489C9681FE34EA500CC6CA7 /* Assets.xcassets */,
 				1489C96A1FE34EA500CC6CA7 /* LaunchScreen.storyboard */,
 				1489C96D1FE34EA500CC6CA7 /* Info.plist */,
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1488B8AE1FE3C71700332F6A /* RatingControl.swift in Sources */,
 				1489C9671FE34EA500CC6CA7 /* Reviewbook.xcdatamodeld in Sources */,
 				1489C9611FE34EA500CC6CA7 /* ViewController.swift in Sources */,
 				1489C95F1FE34EA500CC6CA7 /* AppDelegate.swift in Sources */,

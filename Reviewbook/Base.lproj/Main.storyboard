@@ -56,6 +56,9 @@ Maybe</string>
                                     <outletCollection property="gestureRecognizers" destination="YqN-bZ-ife" appends="YES" id="VdS-KG-3Qi"/>
                                 </connections>
                             </imageView>
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="14" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
+                                <rect key="frame" x="20" y="565" width="335" height="86"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
@@ -63,12 +66,16 @@ Maybe</string>
                             <constraint firstItem="jZ4-LY-HAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="40J-wL-sAC"/>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6RI-5Q-Azd"/>
                             <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="top" secondItem="hjK-Xu-ACg" secondAttribute="bottom" constant="8" id="77T-fq-CHt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6W2-B7-y0m" secondAttribute="bottom" constant="16" id="IsP-uc-50p"/>
                             <constraint firstItem="wqG-cW-fIy" firstAttribute="top" secondItem="jZ4-LY-HAu" secondAttribute="bottom" constant="8" id="OpE-bK-JB1"/>
                             <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="T0B-y9-c7w"/>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="top" secondItem="wqG-cW-fIy" secondAttribute="bottom" constant="8" id="YV0-IZ-Nhh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jZ4-LY-HAu" secondAttribute="trailing" constant="16" id="Z9h-5K-e7b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6W2-B7-y0m" secondAttribute="trailing" constant="20" id="ZIi-ef-Qok"/>
                             <constraint firstItem="wqG-cW-fIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cHJ-HF-7A2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ejJ-Xg-DOQ" secondAttribute="trailing" constant="16" id="jvN-kd-5HD"/>
+                            <constraint firstItem="6W2-B7-y0m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rio-ib-rRD"/>
+                            <constraint firstItem="6W2-B7-y0m" firstAttribute="top" secondItem="ejJ-Xg-DOQ" secondAttribute="bottom" constant="8" id="uFN-6E-Ah9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wqG-cW-fIy" secondAttribute="trailing" constant="16" id="ukr-Zy-AU0"/>
                             <constraint firstItem="jZ4-LY-HAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wtk-QV-ObI"/>
                         </constraints>

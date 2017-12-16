@@ -147,15 +147,22 @@ Maybe</string>
                     </view>
                     <navigationItem key="navigationItem" title="New Review" id="7iD-Xo-SAL">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acg-OZ-PW8"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="W0W-ZR-Jhh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="W0W-ZR-Jhh">
+                            <connections>
+                                <segue destination="XRl-bi-NJv" kind="unwind" unwindAction="unwindToReviewListWithSender:" id="yC1-Mg-zFZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="Image" destination="ejJ-Xg-DOQ" id="oMs-bB-36F"/>
                         <outlet property="Name" destination="wqG-cW-fIy" id="3tC-yY-Rv8"/>
+                        <outlet property="RatingControl" destination="6W2-B7-y0m" id="58F-rb-oB6"/>
                         <outlet property="TextView" destination="hjK-Xu-ACg" id="BHy-93-sH2"/>
+                        <outlet property="saveButton" destination="W0W-ZR-Jhh" id="zAM-KM-7U6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="XRl-bi-NJv" userLabel="Exit" sceneMemberID="exit"/>
                 <tapGestureRecognizer id="YqN-bZ-ife">
                     <connections>
                         <action selector="tapImage:" destination="BYZ-38-t0r" id="UdX-x5-w2f"/>

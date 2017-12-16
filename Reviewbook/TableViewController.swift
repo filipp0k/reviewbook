@@ -48,6 +48,16 @@ class TableViewController: UITableViewController {
     }
     
 
+    @IBAction func unwindToReviewList(sender: UIStoryboardSegue) {
+        if let source = sender.source as? ReviewViewController, let review = source.review {
+            
+            let newIndexPath = IndexPath(row: reviews.count, section: 0)
+            
+            reviews.append(review)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

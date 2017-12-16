@@ -7,12 +7,16 @@
 //
 
 import UIKit
-
+import os.log
 class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    var review: Review?
+    
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var TextView: UITextView!
     @IBOutlet weak var Image: UIImageView!
+    @IBOutlet weak var RatingControl: RatingControl!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     @IBAction func tapImage(_ sender: UITapGestureRecognizer) {
         //print("Does it work?")
@@ -24,17 +28,36 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         present(imagePicker, animated: true)
     }
     
-    //ГЫ
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === saveButton else {
+            os_log("The save button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
+        
+        let name = Name.text ?? ""
+        let photo = Image.image
+        let rating = RatingControl.rating
+        let description = TextView.text ?? ""
+        
+        // Set the meal to be passed to MealTableViewController after the unwind segue.
+        review = Review(name: name, description: description, photo: photo, rating: rating)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Name.delegate = self
         
     }
     
+    
+    
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         // The info dictionary may contain multiple representations of the image. You want to use the original.
@@ -44,6 +67,9 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         Image.image = selectedImage
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    
     func textFieldShouldReturn(_ textfield: UITextField) -> Bool {
         textfield.resignFirstResponder()
         return true
@@ -51,8 +77,6 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     func textFieldDidEndEditing(_ textField: UITextField) {
         //Label.text = textField.text
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

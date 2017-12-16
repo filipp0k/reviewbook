@@ -146,8 +146,12 @@ Maybe</string>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Review" id="7iD-Xo-SAL">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acg-OZ-PW8"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="W0W-ZR-Jhh">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="acg-OZ-PW8">
+                            <connections>
+                                <action selector="CancelButton:" destination="BYZ-38-t0r" id="LKb-3W-G8t"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="W0W-ZR-Jhh">
                             <connections>
                                 <segue destination="XRl-bi-NJv" kind="unwind" unwindAction="unwindToReviewListWithSender:" id="yC1-Mg-zFZ"/>
                             </connections>

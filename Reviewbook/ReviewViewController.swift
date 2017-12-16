@@ -17,6 +17,9 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var Image: UIImageView!
     @IBOutlet weak var RatingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBAction func CancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func tapImage(_ sender: UITapGestureRecognizer) {
         //print("Does it work?")
@@ -49,7 +52,7 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         Name.delegate = self
-        
+        updateSaveButtonState()
     }
     
     
@@ -69,13 +72,17 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     
     
-    
+    private func updateSaveButtonState() {
+        let text = Name.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
+    }
     func textFieldShouldReturn(_ textfield: UITextField) -> Bool {
         textfield.resignFirstResponder()
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //Label.text = textField.text
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

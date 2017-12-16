@@ -124,7 +124,7 @@ and in him
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let review3 = Review(name: "Another Igor",description:"Is it gay to use your mates pics?", photo: photo3, rating: 3) else {
+        guard let review3 = Review(name: "Igor in IELTS",description:"Is it gay to use your mates pics?", photo: photo3, rating: 3) else {
             fatalError("Unable to instantiate meal2")
         }
         

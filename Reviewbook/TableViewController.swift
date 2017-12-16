@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import os.log
 class TableViewController: UITableViewController {
 
     var reviews = [Review]()
@@ -50,14 +50,21 @@ class TableViewController: UITableViewController {
 
     @IBAction func unwindToReviewList(sender: UIStoryboardSegue) {
         if let source = sender.source as? ReviewViewController, let review = source.review {
-            
-            let newIndexPath = IndexPath(row: reviews.count, section: 0)
-            
-            reviews.append(review)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                reviews[selectedIndexPath.row] = review
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                let newIndexPath = IndexPath(row: reviews.count, section: 0)
+                
+                reviews.append(review)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
             
         }
     }
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -93,15 +100,35 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch segue.identifier ?? "" {
+        case "AddItem":
+            os_log("Adding a new review.", log: OSLog.default, type: .debug)
+        case "ShowDetail":
+            guard let DetailViewController = segue.destination as? ReviewViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedReviewCell = sender as? ReviewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedReviewCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedReview = reviews[indexPath.row]
+            DetailViewController.review = selectedReview
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
     }
-    */
+    
     //MARK: Importing some data
     
     

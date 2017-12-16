@@ -63,6 +63,7 @@
                                     <outlet property="ImageCell" destination="s7e-eo-Gle" id="EAb-fw-D9e"/>
                                     <outlet property="LabelCell" destination="4fQ-DV-I7T" id="6r0-nj-cPY"/>
                                     <outlet property="RatingCell" destination="m0w-Iz-ffm" id="Iey-vx-bFN"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="p4c-v7-r1X"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -173,7 +174,7 @@ Maybe</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="561" y="913"/>
+            <point key="canvasLocation" x="196" y="904"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8oV-YN-TAa">
@@ -215,4 +216,7 @@ Maybe</string>
     <resources>
         <image name="NoImage" width="1080" height="1080"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="p4c-v7-r1X"/>
+    </inferredMetricsTieBreakers>
 </document>

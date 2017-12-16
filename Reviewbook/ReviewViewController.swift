@@ -18,6 +18,16 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var RatingControl: RatingControl!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBAction func CancelButton(_ sender: Any) {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The ReviewViewController is not inside a navigation controller.")
+        }
         dismiss(animated: true, completion: nil)
     }
     
@@ -44,7 +54,6 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let rating = RatingControl.rating
         let description = TextView.text ?? ""
         
-        // Set the meal to be passed to MealTableViewController after the unwind segue.
         review = Review(name: name, description: description, photo: photo, rating: rating)
     }
     
@@ -52,6 +61,14 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         Name.delegate = self
+        // Set up views if editing an existing review.
+        if let review = review {
+            navigationItem.title = review.name
+            Name.text = review.name
+            Image.image = review.photo
+            RatingControl.rating = review.rating
+            TextView.text = review.description
+        }
         updateSaveButtonState()
     }
     

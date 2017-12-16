@@ -8,15 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var Label: UILabel!
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var TextView: UITextView!
     @IBOutlet weak var Image: UIImageView!
     
     @IBAction func tapImage(_ sender: UITapGestureRecognizer) {
-        print("Does it work?")
+        //print("Does it work?")
         view.endEditing(true)
         //Name.resignFirstResponder()
         let imagePicker = UIImagePickerController()
@@ -50,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        Label.text = textField.text
+        //Label.text = textField.text
     }
     
     

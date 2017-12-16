@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,22 +28,36 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s7e-eo-Gle">
-                                            <rect key="frame" x="16" y="11" width="73" height="73"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s7e-eo-Gle">
+                                            <rect key="frame" x="4" y="4" width="81.5" height="81.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="s7e-eo-Gle" secondAttribute="height" multiplier="1:1" id="LBm-o9-oUz"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fQ-DV-I7T">
-                                            <rect key="frame" x="92" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fQ-DV-I7T">
+                                            <rect key="frame" x="93.5" y="15" width="257.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m0w-Iz-ffm" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
-                                            <rect key="frame" x="92" y="40" width="252" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="m0w-Iz-ffm" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
+                                            <rect key="frame" x="93.5" y="37.5" width="252" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="f2P-O9-6pg"/>
+                                                <constraint firstAttribute="width" constant="252" id="zT7-kT-1gO"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="s7e-eo-Gle" firstAttribute="leading" secondItem="BXZ-yH-0O7" secondAttribute="leading" constant="4" id="HVs-Ko-17E"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4fQ-DV-I7T" secondAttribute="trailing" constant="8" id="P9b-B0-JVb"/>
+                                        <constraint firstAttribute="bottom" secondItem="m0w-Iz-ffm" secondAttribute="bottom" constant="8" id="QFM-xL-w7M"/>
+                                        <constraint firstAttribute="bottom" secondItem="s7e-eo-Gle" secondAttribute="bottom" constant="4" id="Uae-EX-t4h"/>
+                                        <constraint firstItem="4fQ-DV-I7T" firstAttribute="leading" secondItem="s7e-eo-Gle" secondAttribute="trailing" constant="8" id="oxW-MZ-8wy"/>
+                                        <constraint firstItem="4fQ-DV-I7T" firstAttribute="top" secondItem="BXZ-yH-0O7" secondAttribute="topMargin" constant="4" id="uN4-fs-kG9"/>
+                                        <constraint firstItem="m0w-Iz-ffm" firstAttribute="leading" secondItem="s7e-eo-Gle" secondAttribute="trailing" constant="8" id="xnC-xs-GMl"/>
+                                        <constraint firstItem="s7e-eo-Gle" firstAttribute="top" secondItem="BXZ-yH-0O7" secondAttribute="top" constant="4" id="ziV-Vo-bCD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="ImageCell" destination="s7e-eo-Gle" id="EAb-fw-D9e"/>
@@ -61,21 +76,15 @@
             </objects>
             <point key="canvasLocation" x="-655.20000000000005" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Review View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Reviewbook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ReviewViewController" customModule="Reviewbook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ4-LY-HAu">
-                                <rect key="frame" x="16" y="20" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-cW-fIy">
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-cW-fIy">
                                 <rect key="frame" x="16" y="48.5" width="343" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -85,7 +94,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-Xu-ACg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-Xu-ACg">
                                 <rect key="frame" x="16" y="77.5" width="343" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -96,7 +105,7 @@ Maybe</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
                                 <rect key="frame" x="20" y="213.5" width="335" height="335"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -106,21 +115,18 @@ Maybe</string>
                                     <outletCollection property="gestureRecognizers" destination="YqN-bZ-ife" appends="YES" id="VdS-KG-3Qi"/>
                                 </connections>
                             </imageView>
-                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="firstBaseline" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
+                            <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" distribution="equalSpacing" alignment="firstBaseline" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
                                 <rect key="frame" x="61.5" y="556.5" width="252" height="44"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjK-Xu-ACg" secondAttribute="trailing" constant="16" id="35Z-j0-pU1"/>
-                            <constraint firstItem="jZ4-LY-HAu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="40J-wL-sAC"/>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6RI-5Q-Azd"/>
                             <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="top" secondItem="hjK-Xu-ACg" secondAttribute="bottom" constant="8" id="77T-fq-CHt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6W2-B7-y0m" secondAttribute="bottom" constant="16" id="IsP-uc-50p"/>
-                            <constraint firstItem="wqG-cW-fIy" firstAttribute="top" secondItem="jZ4-LY-HAu" secondAttribute="bottom" constant="8" id="OpE-bK-JB1"/>
                             <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="T0B-y9-c7w"/>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="top" secondItem="wqG-cW-fIy" secondAttribute="bottom" constant="8" id="YV0-IZ-Nhh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jZ4-LY-HAu" secondAttribute="trailing" constant="16" id="Z9h-5K-e7b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6W2-B7-y0m" secondAttribute="trailing" constant="20" id="ZIi-ef-Qok"/>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aAM-Bq-wsp"/>
                             <constraint firstItem="wqG-cW-fIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cHJ-HF-7A2"/>
@@ -128,13 +134,11 @@ Maybe</string>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rio-ib-rRD"/>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="top" secondItem="ejJ-Xg-DOQ" secondAttribute="bottom" constant="8" id="uFN-6E-Ah9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wqG-cW-fIy" secondAttribute="trailing" constant="16" id="ukr-Zy-AU0"/>
-                            <constraint firstItem="jZ4-LY-HAu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wtk-QV-ObI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="Image" destination="ejJ-Xg-DOQ" id="oMs-bB-36F"/>
-                        <outlet property="Label" destination="jZ4-LY-HAu" id="R4R-Vz-biL"/>
                         <outlet property="Name" destination="wqG-cW-fIy" id="3tC-yY-Rv8"/>
                         <outlet property="TextView" destination="hjK-Xu-ACg" id="BHy-93-sH2"/>
                     </connections>

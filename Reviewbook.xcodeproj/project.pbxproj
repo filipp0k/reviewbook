@@ -10,7 +10,7 @@
 		1488B8AE1FE3C71700332F6A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488B8AD1FE3C71700332F6A /* RatingControl.swift */; };
 		1488B8B01FE52AD900332F6A /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1488B8AF1FE52AD900332F6A /* Review.swift */; };
 		1489C95F1FE34EA500CC6CA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */; };
-		1489C9611FE34EA500CC6CA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489C9601FE34EA500CC6CA7 /* ViewController.swift */; };
+		1489C9611FE34EA500CC6CA7 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489C9601FE34EA500CC6CA7 /* ReviewViewController.swift */; };
 		1489C9641FE34EA500CC6CA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1489C9621FE34EA500CC6CA7 /* Main.storyboard */; };
 		1489C9671FE34EA500CC6CA7 /* Reviewbook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1489C9651FE34EA500CC6CA7 /* Reviewbook.xcdatamodeld */; };
 		1489C9691FE34EA500CC6CA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1489C9681FE34EA500CC6CA7 /* Assets.xcassets */; };
@@ -24,7 +24,7 @@
 		1488B8AF1FE52AD900332F6A /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		1489C95B1FE34EA500CC6CA7 /* Reviewbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reviewbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1489C9601FE34EA500CC6CA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1489C9601FE34EA500CC6CA7 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		1489C9631FE34EA500CC6CA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1489C9661FE34EA500CC6CA7 /* Reviewbook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reviewbook.xcdatamodel; sourceTree = "<group>"; };
 		1489C9681FE34EA500CC6CA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */,
-				1489C9601FE34EA500CC6CA7 /* ViewController.swift */,
+				1489C9601FE34EA500CC6CA7 /* ReviewViewController.swift */,
 				1489C9621FE34EA500CC6CA7 /* Main.storyboard */,
 				14F4E2C61FE56B3A0015AAD2 /* TableViewController.swift */,
 				14F4E2C41FE567320015AAD2 /* ReviewCell.swift */,
@@ -156,7 +156,7 @@
 				14F4E2C51FE567320015AAD2 /* ReviewCell.swift in Sources */,
 				1488B8AE1FE3C71700332F6A /* RatingControl.swift in Sources */,
 				1489C9671FE34EA500CC6CA7 /* Reviewbook.xcdatamodeld in Sources */,
-				1489C9611FE34EA500CC6CA7 /* ViewController.swift in Sources */,
+				1489C9611FE34EA500CC6CA7 /* ReviewViewController.swift in Sources */,
 				1489C95F1FE34EA500CC6CA7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

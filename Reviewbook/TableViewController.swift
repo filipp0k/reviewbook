@@ -13,7 +13,13 @@ class TableViewController: UITableViewController {
     var reviews = [Review]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSampleReviews()
+        if let savedReviews = loadReviews() {
+            reviews += savedReviews
+        }
+        else {
+            loadSampleReviews()
+        }
+        
         navigationItem.leftBarButtonItem = editButtonItem
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -58,6 +64,7 @@ class TableViewController: UITableViewController {
                 let newIndexPath = IndexPath(row: reviews.count, section: 0)
                 
                 reviews.append(review)
+                saveReviews()
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
             
@@ -80,6 +87,7 @@ class TableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             reviews.remove(at: indexPath.row)
+            saveReviews()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -141,7 +149,7 @@ class TableViewController: UITableViewController {
         let photo1 = UIImage(named: "Igor1")
         let photo2 = UIImage(named: "Igor2")
         let photo3 = UIImage(named: "Igor3")
-        guard let review1 = Review(name: "Igor in Lipton Glasses", description: """
+        guard let review1 = Review(name: "Igor in Lipton Glasses", dscr: """
 He is awesome
 I am sure in it
 and in him
@@ -149,15 +157,28 @@ and in him
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let review2 = Review(name: "Igor in IELTS", description: "", photo: photo2, rating: 5) else {
+        guard let review2 = Review(name: "Igor in IELTS", dscr: "", photo: photo2, rating: 5) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let review3 = Review(name: "Igor in IELTS",description:"Is it gay to use your mates pics?", photo: photo3, rating: 3) else {
+        guard let review3 = Review(name: "Igor in IELTS",dscr:"Is it gay to use your mates pics?", photo: photo3, rating: 3) else {
             fatalError("Unable to instantiate meal2")
         }
         
         reviews += [review1, review2, review3]
     }
+    private func saveReviews() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(reviews, toFile: Review.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("Successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save...", log: OSLog.default, type: .error)
+        }
+    }
+    private func loadReviews() -> [Review]?  {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: Review.ArchiveURL.path) as? [Review]
+    }
+    
+    
 
 }

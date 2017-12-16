@@ -52,9 +52,9 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let name = Name.text ?? ""
         let photo = Image.image
         let rating = RatingControl.rating
-        let description = TextView.text ?? ""
+        let dscr = TextView.text ?? ""
         
-        review = Review(name: name, description: description, photo: photo, rating: rating)
+        review = Review(name: name, dscr: dscr, photo: photo, rating: rating)
     }
     
     
@@ -67,7 +67,7 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             Name.text = review.name
             Image.image = review.photo
             RatingControl.rating = review.rating
-            TextView.text = review.description
+            TextView.text = review.dscr
         }
         updateSaveButtonState()
     }
@@ -108,6 +108,6 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.view.endEditing(true)
     }
 
-
+    
 }
 

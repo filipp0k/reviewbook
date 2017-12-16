@@ -7,11 +7,26 @@
 //
 
 import UIKit
+import os.log
 
-class Review {
+class Review: NSObject, NSCoding {
     
+    //MARK: Properties
+    var name: String
+    var dscr: String
+    var photo: UIImage?
+    var rating: Int
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("reviews")
     
-    init?(name: String, description: String, photo: UIImage?, rating: Int) {
+    struct PropertyKey {
+        static let name = "name"
+        static let dscr = "dscr"
+        static let photo = "photo"
+        static let rating = "rating"
+    }
+    //MARK: Initialisation
+    init?(name: String, dscr: String, photo: UIImage?, rating: Int) {
         
         // Initialization is failing:
         
@@ -24,19 +39,40 @@ class Review {
         guard (rating >= 0) && (rating <= 5) else {
             return nil
         }
+        if dscr.isEmpty {
+            self.dscr = ""
+        } else {
+            self.dscr = dscr
+        }
         
         self.name = name
-        self.description = description
         self.photo = photo
         self.rating = rating
         
     }
     
-    //MARK: Properties
-    var name: String
-    var description: String
-    var photo: UIImage?
-    var rating: Int
-    
-    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(name, forKey: PropertyKey.name)
+        aCoder.encode(dscr, forKey: PropertyKey.dscr)
+        aCoder.encode(photo, forKey: PropertyKey.photo)
+        aCoder.encode(rating, forKey: PropertyKey.rating)
+    }
+    required convenience init?(coder aDecoder: NSCoder) {
+        
+        // The name is required. If we cannot decode a name string, the initializer should fail.
+        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+            os_log("Unable to decode the name for a object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        guard let dscr = aDecoder.decodeObject(forKey: PropertyKey.dscr) as? String else {
+            os_log("Unable to decode DESCRIPTION for a object.", log: OSLog.default, type: .debug)
+            return nil
+        }
+        //let dscr = aDecoder.decodeObject(forKey: PropertyKey.dscr) as! String
+        // Because photo is an optional property, just use conditional cast.
+        let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
+        let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
+        self.init(name: name, dscr: dscr, photo: photo, rating: rating)
+        
+    }
 }

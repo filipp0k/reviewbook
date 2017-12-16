@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable class RatingControl: UIStackView {
 
+    //MARK: Properities
     private var ratingButtons = [UIButton]()
     var rating = 0 {
         didSet {
@@ -31,7 +32,7 @@ import UIKit
     }
     
     
-    
+    //MARK: Actions and Updates
     @objc func ratingButtonTapped(button: UIButton) {
         let index = ratingButtons.index(of: button)!
         // Calculate the rating of the selected button
@@ -55,7 +56,7 @@ import UIKit
     }
     
     
-    //  Presenting buttons in view
+    //MARK: Presenting buttons in view
     private func setupButtons() {
         for button in ratingButtons {
             removeArrangedSubview(button)
@@ -81,6 +82,7 @@ import UIKit
         button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
         button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
         
+        //Action Handler
         button.addTarget(self, action: #selector(RatingControl.ratingButtonTapped(button:)), for: .touchUpInside)
         // Add the button to the stack
         addArrangedSubview(button)

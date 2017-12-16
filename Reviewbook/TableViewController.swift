@@ -10,10 +10,10 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    var reviews = [Review]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
+        loadSampleReviews()
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -34,15 +34,16 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return reviews.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ReviewCell
+        let review = reviews[indexPath.row]
+        cell.ImageCell.image = review.photo
+        cell.LabelCell.text = review.name
+        cell.RatingCell.rating = review.rating
         return cell
     }
     
@@ -91,5 +92,33 @@ class TableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    //MARK: Importing some data
+    
+    
+    
+    
+    private func loadSampleReviews() {
+        
+        let photo1 = UIImage(named: "Igor1")
+        let photo2 = UIImage(named: "Igor2")
+        let photo3 = UIImage(named: "Igor3")
+        guard let review1 = Review(name: "Igor in Lipton Glasses", description: """
+He is awesome
+I am sure in it
+and in him
+""", photo: photo1, rating: 4) else {
+            fatalError("Unable to instantiate meal1")
+        }
+        
+        guard let review2 = Review(name: "Igor in IELTS", description: "", photo: photo2, rating: 5) else {
+            fatalError("Unable to instantiate meal2")
+        }
+        
+        guard let review3 = Review(name: "Another Igor",description:"Is it gay to use your mates pics?", photo: photo3, rating: 3) else {
+            fatalError("Unable to instantiate meal2")
+        }
+        
+        reviews += [review1, review2, review3]
+    }
 
 }

@@ -17,6 +17,7 @@
 		1489C96C1FE34EA500CC6CA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1489C96A1FE34EA500CC6CA7 /* LaunchScreen.storyboard */; };
 		14F4E2C51FE567320015AAD2 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4E2C41FE567320015AAD2 /* ReviewCell.swift */; };
 		14F4E2C71FE56B3A0015AAD2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F4E2C61FE56B3A0015AAD2 /* TableViewController.swift */; };
+		14F4E2CB1FE6FEC50015AAD2 /* explanatory_note.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14F4E2CA1FE6FEC50015AAD2 /* explanatory_note.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1489C96D1FE34EA500CC6CA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14F4E2C41FE567320015AAD2 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		14F4E2C61FE56B3A0015AAD2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		14F4E2CA1FE6FEC50015AAD2 /* explanatory_note.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = explanatory_note.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */,
 				1489C9601FE34EA500CC6CA7 /* ReviewViewController.swift */,
 				1489C9621FE34EA500CC6CA7 /* Main.storyboard */,
+				14F4E2CA1FE6FEC50015AAD2 /* explanatory_note.pdf */,
 				14F4E2C61FE56B3A0015AAD2 /* TableViewController.swift */,
 				14F4E2C41FE567320015AAD2 /* ReviewCell.swift */,
 				1488B8AD1FE3C71700332F6A /* RatingControl.swift */,
@@ -138,6 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F4E2CB1FE6FEC50015AAD2 /* explanatory_note.pdf in Resources */,
 				1489C96C1FE34EA500CC6CA7 /* LaunchScreen.storyboard in Resources */,
 				1489C9691FE34EA500CC6CA7 /* Assets.xcassets in Resources */,
 				1489C9641FE34EA500CC6CA7 /* Main.storyboard in Resources */,

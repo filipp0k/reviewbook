@@ -50,6 +50,7 @@
 		1489C9521FE34EA500CC6CA7 = {
 			isa = PBXGroup;
 			children = (
+				14F4E2CA1FE6FEC50015AAD2 /* explanatory_note.pdf */,
 				1489C95D1FE34EA500CC6CA7 /* Reviewbook */,
 				1489C95C1FE34EA500CC6CA7 /* Products */,
 			);
@@ -69,7 +70,6 @@
 				1489C95E1FE34EA500CC6CA7 /* AppDelegate.swift */,
 				1489C9601FE34EA500CC6CA7 /* ReviewViewController.swift */,
 				1489C9621FE34EA500CC6CA7 /* Main.storyboard */,
-				14F4E2CA1FE6FEC50015AAD2 /* explanatory_note.pdf */,
 				14F4E2C61FE56B3A0015AAD2 /* TableViewController.swift */,
 				14F4E2C41FE567320015AAD2 /* ReviewCell.swift */,
 				1488B8AD1FE3C71700332F6A /* RatingControl.swift */,

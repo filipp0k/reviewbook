@@ -93,10 +93,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hjK-Xu-ACg">
-                                <rect key="frame" x="16" y="101" width="343" height="128"/>
+                                <rect key="frame" x="32" y="101" width="311" height="103.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hjK-Xu-ACg" secondAttribute="height" multiplier="343:128" id="Fue-NS-tj8"/>
+                                    <constraint firstAttribute="width" secondItem="hjK-Xu-ACg" secondAttribute="height" multiplier="384:128" id="Fue-NS-tj8"/>
                                 </constraints>
                                 <string key="text">Well, you can paste your comment here
 Maybe</string>
@@ -104,7 +104,7 @@ Maybe</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NoImage" translatesAutoresizingMaskIntoConstraints="NO" id="ejJ-Xg-DOQ">
-                                <rect key="frame" x="32" y="237" width="311" height="311"/>
+                                <rect key="frame" x="32" y="260" width="311" height="311"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ejJ-Xg-DOQ" secondAttribute="height" multiplier="1:1" id="aPT-PR-Otg"/>
@@ -114,35 +114,66 @@ Maybe</string>
                                 </connections>
                             </imageView>
                             <stackView autoresizesSubviews="NO" opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="firstBaseline" spacing="8" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6W2-B7-y0m" customClass="RatingControl" customModule="Reviewbook" customModuleProvider="target">
-                                <rect key="frame" x="61.5" y="556" width="252" height="44"/>
+                                <rect key="frame" x="61.5" y="579" width="252" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="54h-56-ujo"/>
+                                    <constraint firstAttribute="width" constant="252" id="LyI-Tu-ecn"/>
+                                </constraints>
                             </stackView>
                             <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqG-cW-fIy">
-                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <rect key="frame" x="32" y="72" width="311" height="21"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="wbt-U9-lYt"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I4o-jX-b9l">
+                                <rect key="frame" x="32" y="212" width="311" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNJ-kS-e70">
+                                        <rect key="frame" x="0.0" y="10" width="43.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fK6-8N-mxz">
+                                        <rect key="frame" x="51.5" y="5" width="140.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price in: USD$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBH-l4-H6H">
+                                        <rect key="frame" x="200" y="10" width="111" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="qP9-Yq-ymy"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjK-Xu-ACg" secondAttribute="trailing" constant="16" id="35Z-j0-pU1"/>
-                            <constraint firstItem="hjK-Xu-ACg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6RI-5Q-Azd"/>
-                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="top" secondItem="hjK-Xu-ACg" secondAttribute="bottom" constant="8" id="77T-fq-CHt"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="6W2-B7-y0m" secondAttribute="bottom" constant="16" id="IsP-uc-50p"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hjK-Xu-ACg" secondAttribute="trailing" constant="32" id="35Z-j0-pU1"/>
+                            <constraint firstItem="I4o-jX-b9l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="5bW-rW-Z07"/>
+                            <constraint firstItem="hjK-Xu-ACg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="6RI-5Q-Azd"/>
+                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="top" secondItem="I4o-jX-b9l" secondAttribute="bottom" constant="8" id="KOw-Eg-S8J"/>
+                            <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MXW-jP-RiV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I4o-jX-b9l" secondAttribute="trailing" constant="32" id="Sbg-4n-04d"/>
                             <constraint firstItem="ejJ-Xg-DOQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="T0B-y9-c7w"/>
                             <constraint firstItem="wqG-cW-fIy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="U96-jo-Q7F"/>
                             <constraint firstItem="hjK-Xu-ACg" firstAttribute="top" secondItem="wqG-cW-fIy" secondAttribute="bottom" constant="8" id="YV0-IZ-Nhh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6W2-B7-y0m" secondAttribute="trailing" constant="20" id="ZIi-ef-Qok"/>
                             <constraint firstItem="6W2-B7-y0m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aAM-Bq-wsp"/>
-                            <constraint firstItem="wqG-cW-fIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cHJ-HF-7A2"/>
+                            <constraint firstItem="wqG-cW-fIy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="cHJ-HF-7A2"/>
+                            <constraint firstItem="6W2-B7-y0m" firstAttribute="top" secondItem="ejJ-Xg-DOQ" secondAttribute="bottom" constant="8" id="dfU-a5-UgO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ejJ-Xg-DOQ" secondAttribute="trailing" constant="32" id="jvN-kd-5HD"/>
-                            <constraint firstItem="6W2-B7-y0m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rio-ib-rRD"/>
-                            <constraint firstItem="6W2-B7-y0m" firstAttribute="top" secondItem="ejJ-Xg-DOQ" secondAttribute="bottom" constant="8" id="uFN-6E-Ah9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wqG-cW-fIy" secondAttribute="trailing" constant="16" id="ukr-Zy-AU0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wqG-cW-fIy" secondAttribute="trailing" constant="32" id="ukr-Zy-AU0"/>
+                            <constraint firstItem="I4o-jX-b9l" firstAttribute="top" secondItem="hjK-Xu-ACg" secondAttribute="bottom" constant="8" id="weJ-j2-y2R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -160,7 +191,9 @@ Maybe</string>
                     </navigationItem>
                     <connections>
                         <outlet property="Image" destination="ejJ-Xg-DOQ" id="oMs-bB-36F"/>
+                        <outlet property="InputCurrency" destination="fK6-8N-mxz" id="4Hs-bY-vCl"/>
                         <outlet property="Name" destination="wqG-cW-fIy" id="3tC-yY-Rv8"/>
+                        <outlet property="OutputCurrency" destination="zBH-l4-H6H" id="g2z-9i-If2"/>
                         <outlet property="RatingControl" destination="6W2-B7-y0m" id="58F-rb-oB6"/>
                         <outlet property="TextView" destination="hjK-Xu-ACg" id="BHy-93-sH2"/>
                         <outlet property="saveButton" destination="W0W-ZR-Jhh" id="zAM-KM-7U6"/>
@@ -174,7 +207,7 @@ Maybe</string>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="196" y="904"/>
+            <point key="canvasLocation" x="196" y="903.59820089955031"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8oV-YN-TAa">

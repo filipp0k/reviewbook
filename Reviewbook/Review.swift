@@ -16,6 +16,7 @@ class Review: NSObject, NSCoding {
     var dscr: String
     var photo: UIImage?
     var rating: Int
+    var prc: Double
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("reviews")
     
@@ -24,9 +25,10 @@ class Review: NSObject, NSCoding {
         static let dscr = "dscr"
         static let photo = "photo"
         static let rating = "rating"
+        static let prc = "prc"
     }
     //MARK: Initialisation
-    init?(name: String, dscr: String, photo: UIImage?, rating: Int) {
+    init?(name: String, dscr: String, photo: UIImage?, rating: Int, prc: Double) {
         
         // Initialization is failing:
         
@@ -48,6 +50,7 @@ class Review: NSObject, NSCoding {
         self.name = name
         self.photo = photo
         self.rating = rating
+        self.prc = prc
         
     }
     
@@ -56,6 +59,7 @@ class Review: NSObject, NSCoding {
         aCoder.encode(dscr, forKey: PropertyKey.dscr)
         aCoder.encode(photo, forKey: PropertyKey.photo)
         aCoder.encode(rating, forKey: PropertyKey.rating)
+        aCoder.encode(prc, forKey: PropertyKey.prc)
     }
     required convenience init?(coder aDecoder: NSCoder) {
         
@@ -72,7 +76,8 @@ class Review: NSObject, NSCoding {
         // Because photo is an optional property, just use conditional cast.
         let photo = aDecoder.decodeObject(forKey: PropertyKey.photo) as? UIImage
         let rating = aDecoder.decodeInteger(forKey: PropertyKey.rating)
-        self.init(name: name, dscr: dscr, photo: photo, rating: rating)
+        let prc = aDecoder.decodeFloat(forKey: PropertyKey.prc)
+        self.init(name: name, dscr: dscr, photo: photo, rating: rating, prc: Double(prc))
         
     }
 }

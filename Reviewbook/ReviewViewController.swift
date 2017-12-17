@@ -55,8 +55,16 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let photo = Image.image
         let rating = RatingControl.rating
         let dscr = TextView.text ?? ""
+        var prc = 0.00
+        if let x = InputCurrency.text {
+            prc = Double(x)!
+        }
+//        if let inputprc = InputCurrency.text {
+//            prc = Double(inputprc)!
+//        }
+        //let prc = Double(InputCurrency.text)
         
-        review = Review(name: name, dscr: dscr, photo: photo, rating: rating)
+        review = Review(name: name, dscr: dscr, photo: photo, rating: rating, prc: prc)
     }
     
     
@@ -70,6 +78,7 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             Image.image = review.photo
             RatingControl.rating = review.rating
             TextView.text = review.dscr
+            InputCurrency.text = String(review.prc)
         }
         updateSaveButtonState()
         
@@ -170,7 +179,7 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                         strongSelf.OutputCurrency.text = "Here will be $"
                     } else {
                         if let inputmoney = Double(strongSelf.InputCurrency.text!) {
-                            var c:String = String(format:"%.2f", inputmoney*Double(value)!)
+                            let c:String = String(format:"%.2f", inputmoney*Double(value)!)
                             strongSelf.OutputCurrency.text = "Price in: " + c + "$"
                         }
                     }

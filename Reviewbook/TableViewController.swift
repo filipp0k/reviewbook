@@ -153,15 +153,15 @@ class TableViewController: UITableViewController {
 He is awesome
 I am sure in it
 and in him
-""", photo: photo1, rating: 4) else {
+""", photo: photo1, rating: 4, prc: 120.00) else {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let review2 = Review(name: "Igor in IELTS", dscr: "", photo: photo2, rating: 5) else {
+        guard let review2 = Review(name: "Igor in IELTS", dscr: "", photo: photo2, rating: 5, prc: 225.50) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let review3 = Review(name: "Igor in IELTS",dscr:"Is it gay to use your mates pics?", photo: photo3, rating: 3) else {
+        guard let review3 = Review(name: "Igor in IELTS",dscr:"Is it gay to use your mates pics?", photo: photo3, rating: 3, prc: 44.12) else {
             fatalError("Unable to instantiate meal2")
         }
         

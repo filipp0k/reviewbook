@@ -146,22 +146,21 @@ class TableViewController: UITableViewController {
     
     private func loadSampleReviews() {
         
-        let photo1 = UIImage(named: "Igor1")
-        let photo2 = UIImage(named: "Igor2")
-        let photo3 = UIImage(named: "Igor3")
-        guard let review1 = Review(name: "Igor in Lipton Glasses", dscr: """
-He is awesome
-I am sure in it
-and in him
+        let photo1 = UIImage(named: "Water1")
+        let photo2 = UIImage(named: "Water2")
+        let photo3 = UIImage(named: "Water3")
+        guard let review1 = Review(name: "Piligrim", dscr: """
+Very tasty water
+A little bit salty
 """, photo: photo1, rating: 4, prc: 120.00) else {
             fatalError("Unable to instantiate meal1")
         }
         
-        guard let review2 = Review(name: "Igor in IELTS", dscr: "", photo: photo2, rating: 5, prc: 225.50) else {
+        guard let review2 = Review(name: "Aqua Minerale", dscr: "Water from Mosocow channels. untasty", photo: photo2, rating: 2, prc: 225.50) else {
             fatalError("Unable to instantiate meal2")
         }
         
-        guard let review3 = Review(name: "Igor in IELTS",dscr:"Is it gay to use your mates pics?", photo: photo3, rating: 3, prc: 44.12) else {
+        guard let review3 = Review(name: "Snezhinskaya",dscr:"Smells radioactive. Not understandable", photo: photo3, rating: 3, prc: 44.12) else {
             fatalError("Unable to instantiate meal2")
         }
         

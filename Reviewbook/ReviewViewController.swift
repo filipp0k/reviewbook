@@ -56,9 +56,16 @@ class ReviewViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let rating = RatingControl.rating
         let dscr = TextView.text ?? ""
         var prc = 0.00
-        if let x = InputCurrency.text {
-            prc = Double(x)!
+        var x : String
+        if InputCurrency.text == "" {
+            x = "0.00"
+        } else {
+            x = InputCurrency.text!
         }
+        prc = Double(x)!
+//        if InputCurrency.text != nil {
+//            prc = Double(InputCurrency.text!)!
+//        }
 //        if let inputprc = InputCurrency.text {
 //            prc = Double(inputprc)!
 //        }

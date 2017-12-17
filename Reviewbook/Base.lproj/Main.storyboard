@@ -12,7 +12,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--List of Igors-->
+        <!--List of Reviews-->
         <scene sceneID="4VY-DB-pPo">
             <objects>
                 <tableViewController id="uUH-ba-xG9" customClass="TableViewController" customModule="Reviewbook" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="uUH-ba-xG9" id="unW-lJ-3RX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="List of Igors" id="dl8-HR-OHs">
+                    <navigationItem key="navigationItem" title="List of Reviews" id="dl8-HR-OHs">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aTm-8u-m3G">
                             <connections>
                                 <segue destination="r21-t0-Xow" kind="presentation" identifier="AddItem" id="Zzg-MD-VGq"/>
